@@ -1,0 +1,46 @@
+<div class="container mt-5 mb-5">
+  
+  <div *ngIf="!autenticado" class="login-screen animate__animated animate__fadeIn">
+    <div class="card p-5 shadow">
+      <div class="text-center mb-4">
+        <h3 class="mt-2">Acceso Clientes</h3>
+        <p class="text-muted">Gestiona tus mascotas y citas pendientes</p>
+      </div>
+      
+      <form (ngSubmit)="login()"> 
+        <div class="mb-4">
+          <label>Usuario</label>
+          <input type="text" name="user" [(ngModel)]="usuario" class="form-control" placeholder="Tu usuario">
+        </div>
+        
+        <div class="mb-4">
+          <label>Contraseña</label>
+          <input type="password" name="pass" [(ngModel)]="password" class="form-control" placeholder="••••">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-perfil w-100 shadow-sm">Entrar al Portal</button>
+        
+        <div class="text-center mt-4">
+          <p class="text-muted small mb-1">¿Aún no eres cliente?</p>
+          <button type="button" class="btn btn-registro" routerLink="/registro">
+            Crea tu cuenta aquí
+          </button>
+          <br><br>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="autenticado" class="row dashboard-container overflow-hidden animate__animated animate__slideInUp">
+    <div *ngIf="citasProximas.length > 0" class="alert alert-warning">
+      Tienes {{citasProximas.length}} cita(s) próxima(s)! Revisa tu sección de "Mis Mascotas" para más detalles.
+    </div>
+    <div class="col-md-5 col-left p-4 border-end">
+      <app-mis-mascotas></app-mis-mascotas>
+    </div>
+<hr>
+    <div class="col-md-7 bg-white p-4">
+      <app-reservar-cita></app-reservar-cita>
+    </div>
+  </div>
+</div>

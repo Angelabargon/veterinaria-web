@@ -1,0 +1,41 @@
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+  background-color: #2a9d8f; 
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+  font-size: 2.2rem; 
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.nav-link-spacing {
+  font-size: 1.2rem; 
+  font-weight: 600;
+  margin-left: 1.2rem; 
+  margin-right: 1.2rem;
+  color: #ffffff !important; 
+  transition: all 0.3s ease;
+  text-transform: uppercase; 
+  letter-spacing: 0.5px;
+}
+
+.nav-link-spacing:hover {
+  color: #f1f3f2 !important;
+  transform: translateY(-2px); 
+  opacity: 0.9;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-logo-right {
+    position: absolute;
+    right: 5%; /* Lo separamos un poco del borde derecho */
+    top: 20px; /* Ajusta según la altura de tu nav */
+}

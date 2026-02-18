@@ -1,0 +1,40 @@
+.card {
+    border: none;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+}
+
+h3 {
+    color: #264653;
+    font-weight: 800;
+    font-size: 2.2rem;
+}
+
+.form-label {
+    font-size: 1.1rem;
+    color: #2a9d8f;
+    margin-top: 10px;
+}
+
+.form-control {
+    padding: 14px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    border: 2px solid #f1f3f2;
+}
+
+.form-control:focus {
+    border-color: #2a9d8f;
+    box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.1);
+}
+
+.btn-primary {
+    background-color: #2a9d8f;
+    border: none;
+    padding: 15px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 20px;
+}

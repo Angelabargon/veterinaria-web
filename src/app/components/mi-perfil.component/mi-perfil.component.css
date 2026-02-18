@@ -1,0 +1,98 @@
+.login-screen {
+    display: flex !important;     
+    justify-content: center;     
+    align-items: center;         
+    min-height: 80vh;            
+    padding: 0;        
+    width: 100%;
+}
+
+.card.shadow {
+    border: none;
+    border-radius: 25px; 
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    max-width: 450px; 
+    width: 100%;
+    margin: 0 auto;   
+    text-align: center; 
+}
+
+.card h3 {
+    color: #264653;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 12px;
+    padding: 14px;
+    border: 2px solid #f1f3f2; 
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    text-align: center; 
+}
+
+.form-control:focus {
+    border-color: #2a9d8f;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 0 0.25rem rgba(42, 157, 143, 0.1);
+    outline: none;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2a9d8f; 
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center; 
+}
+
+.btn-perfil {
+    border: 2px solid #2a9d8f;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 auto; 
+}
+
+.btn-perfil:hover {
+    background-color: transparent;
+    color: #2a9d8f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 157, 143, 0.3);
+}
+
+.btn-registro {
+    border: 2px solid #2a9d8f;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+.btn-registro:hover {
+    background-color: transparent;
+    color: #2a9d8f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(42, 157, 143, 0.3);
+}

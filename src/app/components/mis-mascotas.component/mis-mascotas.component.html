@@ -1,0 +1,23 @@
+<div class="mascotas-section">
+  <h3>Mis Mascotas</h3>
+  
+  <div class="mascotas-grid">
+    <div *ngFor="let mascota of mascotas" 
+         class="mascota-card" 
+         (click)="toggleReservas(mascota.id)" 
+         [class.active]="mascotaSeleccionadaId === mascota.id">
+      <div class="info">
+        <span class="info-nombre">{{ mascota.nombre }}</span>
+        <span class="info-edad">{{ mascota.edad }} años</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-reservas-fijo" *ngIf="mascotaSeleccionadaId">
+    <div *ngFor="let mascota of mascotas">
+        <div class="reservas-desplegable" *ngIf="mascotaSeleccionadaId === mascota.id">
+            <app-mis-reservas [idMascota]="mascota.id"></app-mis-reservas>
+        </div>
+    </div>
+  </div>
+</div>

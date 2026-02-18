@@ -1,0 +1,57 @@
+.detalle-servicio {
+    /* Clave: el contenedor solo mide lo que mide su contenido (la imagen) */
+    display: inline-block; 
+    width: fit-content;
+    white-space: pre-line;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #f1f3f2;
+    margin-top: 20px;
+
+}
+
+.detalle-servicio img {
+    display: block; /* Quita espacio en blanco inferior de las imágenes */
+    max-width: 400px; /* Controla aquí el tamaño máximo que quieres */
+    height: auto;
+}
+
+.detalle-servicio h3 {
+    color: #264653;
+    font-weight: 800;
+    margin: 15px 20px 5px 20px; /* Respetamos padding original */
+    text-align: left;
+}
+
+.detalle-servicio p {
+    color: #666;
+    margin: 0 20px 10px 20px;
+    text-align: left;
+}
+
+.detalle-servicio .precio {
+    color: #2a9d8f;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Reutilizamos tu estilo de botón invertido */
+.btn-cerrar {
+    border: 2px solid #2a9d8f;
+    color: #2a9d8f;
+    background: transparent;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 0 20px 20px 20px;
+}
+
+.btn-cerrar:hover {
+    background: #2a9d8f;
+    color: white;
+}

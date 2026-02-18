@@ -1,0 +1,8 @@
+<div class="detalle-servicio animate__animated animate__fadeIn">
+  <img [src]="servicio.imagen" class="img-fluida">
+  
+  <h3>{{ servicio.nombre }}</h3>
+<p [innerHTML]="servicio.descripcion"></p>  <p class="precio">Precio: {{ servicio.precio }} €</p>
+  
+  <button class="btn-cerrar" (click)="cerrar.emit()">Cerrar</button>
+</div>

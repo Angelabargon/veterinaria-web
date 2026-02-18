@@ -1,0 +1,34 @@
+<div class="citas-container">
+  <h3>Reservar Cita</h3>
+  
+  <div class="input-group">
+    <label>¿Quién viene a vernos?</label>
+    <select class="form-input" [(ngModel)]="mascotaSeleccionada">
+      <option value="" disabled selected>Elige una mascota</option>
+      <option value="nuevo">Nuevo miembro de la familia</option>
+      <option *ngFor="let m of mascotas" [value]="m.nombre">{{ m.nombre }}</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Fecha deseada</label>
+    <input type="date" class="form-input" [(ngModel)]="fechaSeleccionada">
+  </div>
+
+  <div class="input-group">
+    <label>Hora deseada</label>
+    <select class="form-input" [(ngModel)]="horaSeleccionada">
+      <option value="" disabled selected>Selecciona una hora</option>
+      <option *ngFor="let hora of horasDisponibles" [value]="hora">{{ hora }}</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label>Motivo de la visita</label>
+    <textarea placeholder="Ej. Revisión anual..." class="form-input" rows="1" [(ngModel)]="motivo"></textarea>
+  </div>
+
+  <button (click)="confirmarReserva()">Agendar Cita Ahora</button>
+
+  <h4>Recordatorio: Solo atendemos de lunes a viernes de 10:00 a 17:00. Las citas se pueden cancelar hasta 24 horas antes de la cita.</h4>
+</div>

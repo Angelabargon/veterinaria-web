@@ -1,0 +1,33 @@
+<div class="container-servicios">
+  
+  <h2 class="titulo-seccion">Nuestros Servicios</h2>
+
+  <div class="servicios-grid">
+    
+    <div *ngFor="let s of servicios">
+
+      <div class="card clickable"
+           (click)="abrirDetalles(s)"
+           [ngClass]="{ 'selected': servicioSeleccionado === s }">
+
+        <div class="card-body">
+          <h5>{{ s.nombre }}</h5>
+        </div>
+
+      </div>
+
+      <app-detalles-servicios 
+        *ngIf="servicioSeleccionado === s" 
+        [servicio]="s" 
+        (cerrar)="servicioSeleccionado = null">
+      </app-detalles-servicios>
+
+    </div>
+
+  </div>
+
+  <p class="nota mt-3">
+    OJO: Precios sujetos a cambios. Consulta con nuestro equipo para obtener información actualizada a tu caso.
+  </p>
+
+</div>

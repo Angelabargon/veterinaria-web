@@ -1,0 +1,35 @@
+.faq.container {
+    background-color: #f1f3f2;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.faq h2 {
+    color: #2a9d8f;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.faq-item h4 {
+    color: #2a9d8f;
+    margin-bottom: 8px;
+}
+
+.faq-extra {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.faq-extra a {
+    color: #2a9d8f;
+    text-decoration: underline;
+}

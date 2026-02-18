@@ -1,0 +1,13 @@
+<div class="faq container mt-4">
+  <h2>Preguntas Frecuentes</h2>
+
+  <div class="faq-item" *ngFor="let item of faqs">
+    <h4>{{ item.q }}</h4>
+    <p>{{ item.a }}</p>
+  </div>
+
+  <div class="faq-extra">
+    ¿No encuentras lo que buscas?
+    <a routerLink="/contacto">Envíanos un mensaje</a>
+  </div>
+</div>

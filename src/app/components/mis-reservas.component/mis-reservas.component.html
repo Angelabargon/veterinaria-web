@@ -1,0 +1,14 @@
+<div class="mis-reservas-container">
+  <p class="titulo-interno">Próximas Citas:</p>
+  <div *ngIf="reservas.length > 0; else noCitas">
+    <div *ngFor="let cita of reservas" class="reserva-item">
+      <p class="reserva-motivo">{{ cita.motivo }}</p>
+      <p class="reserva-fecha-hora">
+        📅 {{ cita.fecha }} ⏰ {{ cita.hora }}
+      </p>
+    </div>
+  </div>
+  <ng-template #noCitas>
+    <p class="text-muted small">No hay citas programadas para esta mascota.</p>
+  </ng-template>
+</div>
