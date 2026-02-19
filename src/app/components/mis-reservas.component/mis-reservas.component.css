@@ -6,19 +6,24 @@
   background: white;
   border-left: 4px solid #2a9d8f;
   padding: 12px 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
+  display: block;
   font-size: 1.1rem;
 }
 
-.reserva-fecha {
-  font-weight: bold;
-  color: #264653;
+.reserva-item p {
+  margin: 4px 0; 
 }
 
 .reserva-motivo {
   color: #7f8c8d;
   font-style: italic;
+  font-weight: 500;
+}
+
+.reserva-fecha-hora {
+  color: #264653;
+  font-weight: bold;
+  font-size: 1rem;
 }

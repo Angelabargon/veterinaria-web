@@ -1,5 +1,5 @@
 <div class="container mt-5 mb-5">
-  
+
   <div *ngIf="!autenticado" class="login-screen animate__animated animate__fadeIn">
     <div class="card p-5 shadow">
       <div class="text-center mb-4">
@@ -7,7 +7,7 @@
         <p class="text-muted">Gestiona tus mascotas y citas pendientes</p>
       </div>
       
-      <form (ngSubmit)="login()"> 
+      <form (ngSubmit)="login($event)"> 
         <div class="mb-4">
           <label>Usuario</label>
           <input type="text" name="user" [(ngModel)]="usuario" class="form-control" placeholder="Tu usuario">
@@ -35,6 +35,7 @@
     <div *ngIf="citasProximas.length > 0" class="alert alert-warning">
       Tienes {{citasProximas.length}} cita(s) próxima(s)! Revisa tu sección de "Mis Mascotas" para más detalles.
     </div>
+    <br><hr>
     <div class="col-md-5 col-left p-4 border-end">
       <app-mis-mascotas></app-mis-mascotas>
     </div>

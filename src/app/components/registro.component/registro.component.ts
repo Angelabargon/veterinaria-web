@@ -2,33 +2,58 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutentificacionService } from '../../servicios/autentificacion.service/autentificacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
   standalone: false,
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css',
+  styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent {
-registroForm: FormGroup;
+  registroForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AutentificacionService) {
+  constructor(private fb: FormBuilder, private authService: AutentificacionService, private router: Router) {
     this.registroForm = this.fb.group({
       nombre: ['', Validators.required],
       username: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]], // Valida @dominio
-      telefono: ['', [Validators.required, Validators.pattern("^[0-9]{9}$")]], // 9 números
-      pass: ['', [Validators.required, Validators.minLength(4)]] // Min 4 chars
+      correo: ['', [Validators.required, Validators.email]],
+      telefono: ['', [Validators.required, Validators.pattern("^[0-9]{9}$")]],
+      pass: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
-  onRegistrar() {
+  onRegistrar(event: Event) 
+  {
+    event.preventDefault();
+
     if (this.registroForm.valid) {
-      console.log('Datos del nuevo usuario:', this.registroForm.value);
-      this.authService.registrar(this.registroForm.value).subscribe(usuario => {
-      alert('¡Registro con éxito!');
-      this.router.navigate(['/login']);
-    });
+      const datosForm = this.registroForm.value;
+      
+      const nuevoUsuario = {
+        ...datosForm,
+        id: Date.now(), 
+        password: datosForm.pass 
+      };
+
+      this.authService.registrar(nuevoUsuario).subscribe(exito => {
+        if (exito) {
+          Swal.fire({
+            title: '¡Registro completado!',
+            text: 'Tu cuenta ha sido creada con éxito.',
+            icon: 'success',
+            confirmButtonText: 'Ir a mi perfil', 
+            confirmButtonColor: '#2a9d8f',
+            allowOutsideClick: false 
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.authService.login(nuevoUsuario.username, nuevoUsuario.password).subscribe(() => {
+                this.router.navigate(['/perfil']);
+              });
+            }
+          });
+        }
+      });
     }
   }
 }

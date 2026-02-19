@@ -1,6 +1,8 @@
 <div class="mascotas-section">
   <h3>Mis Mascotas</h3>
-  
+    <button class="salir-btn" (click)="salir()">
+      Salir
+    </button>
   <div class="mascotas-grid">
     <div *ngFor="let mascota of mascotas" 
          class="mascota-card" 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MascotasService } from '../../servicios/mascotas.service/mascotas.service';
 import { AutentificacionService } from '../../servicios/autentificacion.service/autentificacion.service';
 import { Mascota } from '../../models/mascotas.models';
+import { Router } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-mis-mascotas',
@@ -17,7 +19,8 @@ export class MisMascotasComponent implements OnInit
 
   constructor(
     private mascotasService: MascotasService,
-    private authService: AutentificacionService
+    private authService: AutentificacionService,
+    private router: Router 
   ) {}
 
   ngOnInit(): void 
@@ -34,4 +37,9 @@ export class MisMascotasComponent implements OnInit
 
   toggleReservas(id: number) 
   {  this.mascotaSeleccionadaId = this.mascotaSeleccionadaId === id ? null : id;  }
+
+  salir() {
+    this.authService.logout();
+    this.router.navigate(['/home']); 
+  }
 }

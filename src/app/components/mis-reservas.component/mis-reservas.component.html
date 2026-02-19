@@ -3,9 +3,7 @@
   <div *ngIf="reservas.length > 0; else noCitas">
     <div *ngFor="let cita of reservas" class="reserva-item">
       <p class="reserva-motivo">{{ cita.motivo }}</p>
-      <p class="reserva-fecha-hora">
-        📅 {{ cita.fecha }} ⏰ {{ cita.hora }}
-      </p>
+      <p class="reserva-fecha-hora"> 📅 {{ cita.fecha }} 🕝 {{ cita.hora }}</p>
     </div>
   </div>
   <ng-template #noCitas>

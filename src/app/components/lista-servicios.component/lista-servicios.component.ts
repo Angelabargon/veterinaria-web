@@ -15,7 +15,6 @@ export class ListaServiciosComponent implements OnInit {
 
   ngOnInit(): void {
   console.log("Componente cargado");
-  // Eliminamos el .subscribe()
   this.servicios = this.serviciosService.getServicios();
   console.log("Servicios cargados:", this.servicios);
   }
