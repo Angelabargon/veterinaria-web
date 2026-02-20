@@ -7,10 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
+  email = '';
+  telefono = '';
   pregunta = '';
 
   enviar() {
-    alert('Pregunta enviada al Equipo de Veterinaria Kitty');
+    alert('Pregunta enviada al Equipo de Veterinaria KittyCare');
+
+    console.log('Email:', this.email);
+    console.log('Teléfono:', this.telefono);
+    console.log('Mensaje:', this.pregunta);
+
+    this.email = '';
+    this.telefono = '';
     this.pregunta = '';
   }
 }

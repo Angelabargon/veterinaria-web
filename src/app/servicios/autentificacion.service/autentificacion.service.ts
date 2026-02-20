@@ -10,7 +10,7 @@ export class AutentificacionService {
 
   private apiUrl = 'api/usuarios';
   private usuarioActualSubject = new BehaviorSubject<Usuario | null>(null);
-  usuarioActual$ = this.usuarioActualSubject.asObservable(); // observable público
+  usuarioActual$ = this.usuarioActualSubject.asObservable(); 
 
   constructor(private http: HttpClient) {}
 

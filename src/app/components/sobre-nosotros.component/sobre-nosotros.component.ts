@@ -8,13 +8,5 @@ import { Component } from '@angular/core';
 })
 export class SobreNosotrosComponent 
 {
-  empleados = 
-  [
-
-  ];
-
-  resenas = 
-  [
-    
-  ];
+  
 }
